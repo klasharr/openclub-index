@@ -1,0 +1,20 @@
+Redirect 301 /results2014/CupRaces/ /2014/CupRaces/
+Redirect 301 /results2014/TwilightSeries/ /2014/TwilightSeries/
+
+Options +Indexes
+IndexOptions +FancyIndexing
+
+HeaderName /header.html
+ReadmeName /footer.html
+
+IndexIgnore header.html footer.html Logo.jpg updated.txt *.php list
+
+IndexOptions HTMLTable
+
+<Files "robots.txt">
+Order Allow,Deny
+Deny from all
+</Files>
+
+AddType x-httpd-php53 .php
+
