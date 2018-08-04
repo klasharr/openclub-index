@@ -26,3 +26,8 @@ IndexIgnore header.html footer.html Logo.jpg updated.txt *.php list robots.txt
 # Example redirects, use this to redirect from one location to another.
 Redirect 301 /old-page /new-page
 
+# This is relevant because I have a PHP webservice running under this location:
+# http://results.swanagesailingclub.org.uk/list/
+#
+# If you don't need PHP pages within your directory structure, leave this out.
+AddType x-httpd-php71 .php
