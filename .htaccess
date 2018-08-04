@@ -1,20 +1,28 @@
-Redirect 301 /results2014/CupRaces/ /2014/CupRaces/
-Redirect 301 /results2014/TwilightSeries/ /2014/TwilightSeries/
+#
+# Configuration file for the fancy index.
+# 
+# Live example
+# http://results.swanagesailingclub.org.uk/
 
+# Apache docs
+# https://httpd.apache.org/docs/2.4/mod/mod_autoindex.html
+# https://httpd.apache.org/docs/trunk/howto/htaccess.html
+#
+
+# Basic settings to turn on the fancy index.
 Options +Indexes
 IndexOptions +FancyIndexing
+IndexOptions +HTMLTable
 
+# The header and footer files, use these to wrap the listing in a nice display by adding HTML to those
+# files. Google analytics code can go in the footer.
 HeaderName /header.html
 ReadmeName /footer.html
 
-IndexIgnore header.html footer.html Logo.jpg updated.txt *.php list
+# Exclude the following files and directories from the index.
+# *.php is a wildcard to exclude all PHP files
+IndexIgnore header.html footer.html Logo.jpg updated.txt *.php list robots.txt
 
-IndexOptions HTMLTable
-
-<Files "robots.txt">
-Order Allow,Deny
-Deny from all
-</Files>
-
-AddType x-httpd-php53 .php
+# Example redirects, use this to redirect from one location to another.
+Redirect 301 /old-page /new-page
 
